@@ -1,10 +1,7 @@
 package com.dollardeveloper.employeemanagement.employeemanagement.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+import javax.persistence.*;
+
 
 @Entity
 public class Employee {
@@ -15,7 +12,10 @@ public class Employee {
     private String lastName;
     private String firstName;
     private String email;
-    private Date hireDate;
+    private Long hireYear;
+
+//    @OneToOne
+//    private Department department;
 
     public Long getEmpId() {
         return empId;
@@ -49,11 +49,11 @@ public class Employee {
         this.email = email;
     }
 
-    public Date getHireDate() {
-        return hireDate;
+    public Long getHireYear() {
+        return hireYear;
     }
 
-    public void setHireDate(Date hireDate) {
-        this.hireDate = hireDate;
+    public void setHireYear(Long hireYear) {
+        this.hireYear = hireYear;
     }
 }

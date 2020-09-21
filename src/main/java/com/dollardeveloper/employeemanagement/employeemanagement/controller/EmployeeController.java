@@ -28,6 +28,7 @@ public class EmployeeController {
         return "index";
     }
 
+    //model attribute to bind form data
     @GetMapping("/showNewEmployeeForm")
     public String showNewEmployeeForm(Model model){
         Employee employee = new Employee();
