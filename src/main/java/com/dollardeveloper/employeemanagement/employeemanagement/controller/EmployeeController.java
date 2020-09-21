@@ -5,10 +5,7 @@ import com.dollardeveloper.employeemanagement.employeemanagement.service.Employe
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmployeeController {
@@ -42,5 +39,18 @@ public class EmployeeController {
     public String saveEmployee(@ModelAttribute("employee") Employee employee){
     employeeService.saveEmployee(employee);
     return "redirect:/";
+    }
+
+
+    @GetMapping("/showFormForUpdate/{id}")
+    public String showFromForUpdate(@PathVariable (value = "id") long id, Model model){
+
+        //Get Employee from Service
+        Employee employee = employeeService.getEmployeeById(id);
+
+        //Set employee as model attribute to pre-populate form
+        model.addAttribute("employee", employee);
+        return "update_employee";
+
     }
 }
