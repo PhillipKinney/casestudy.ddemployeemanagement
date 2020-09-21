@@ -42,11 +42,11 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/showFormForUpdate/{id}")
-    public String showFromForUpdate(@PathVariable (value = "id") long id, Model model){
+    @GetMapping("/showFormForUpdate/{empId}")
+    public String showFromForUpdate(@PathVariable (value = "empId") long empId, Model model){
 
         //Get Employee from Service
-        Employee employee = employeeService.getEmployeeById(id);
+        Employee employee = employeeService.getEmployeeByEmpId(empId);
 
         //Set employee as model attribute to pre-populate form
         model.addAttribute("employee", employee);
