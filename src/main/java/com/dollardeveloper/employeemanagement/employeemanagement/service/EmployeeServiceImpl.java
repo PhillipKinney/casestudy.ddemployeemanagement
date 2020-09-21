@@ -19,17 +19,18 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
 
-    @Override
+    @Override //Read all employees
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
-        @Override
+
+    @Override //save new employee
     public void saveEmployee(Employee employee) {
          this.employeeRepository.save(employee);
     }
 
-    @Override
+    @Override //update employee record
     public Employee getEmployeeByEmpId(Long empId) {
         Optional<Employee> optional = employeeRepository.findById(empId);
         Employee employee = null;
@@ -39,6 +40,11 @@ public class EmployeeServiceImpl implements EmployeeService{
             throw new RuntimeException("Employee not for id ::" + empId);
         }
         return employee ;
+    }
+
+    @Override
+    public void deleteEmployeeById(Long empId) {
+        this.employeeRepository.deleteById(empId);
     }
 
 //    @Override

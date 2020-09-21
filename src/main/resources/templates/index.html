@@ -44,7 +44,9 @@
             <td th:text="${employee.email}"></td>
             <td th:text="${employee.hireYear}"></td>
             <!-- TODO Add td for department-->
-            <td> <a th:href="@{/showFormForUpdate/{empId}(empId=${employee.empId})}" class="btn btn-primary">Update</a></td>
+            <td> <a th:href="@{/showFormForUpdate/{empId}(empId=${employee.empId})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteEmployee/{empId}(empId=${employee.empId})}" class="btn btn-danger">Delete</a>
+            </td>
 
         </tr>
         </tbody>
