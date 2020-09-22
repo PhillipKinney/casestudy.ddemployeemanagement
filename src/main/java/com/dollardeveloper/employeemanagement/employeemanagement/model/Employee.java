@@ -1,6 +1,7 @@
 package com.dollardeveloper.employeemanagement.employeemanagement.model;
 
 import javax.persistence.*;
+import java.time.YearMonth;
 
 
 @Entity
@@ -11,11 +12,12 @@ public class Employee {
     private Long empId;
     private String lastName;
     private String firstName;
+
     private String email;
     private Long hireYear;
 
-//    @OneToOne
-//    private Department department;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Department department;
 
     public Long getEmpId() {
         return empId;

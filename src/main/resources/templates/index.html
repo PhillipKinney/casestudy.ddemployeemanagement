@@ -1,6 +1,6 @@
 <!DOCTYPE html SYSTEM "http://thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html lang="en" xmlns:="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.w3.org/1999/xhtml">
+      xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:background-color="http://www.w3.org/1999/xhtml">
 
 
 <head>
@@ -16,9 +16,17 @@
     <title>Employee Management System</title>
 </head>
 <body>
+<div class="container">
+    <div class="jumbotron" style="background-color: cornflowerblue; color: white; text-align: center">
+
+        <h1>Employee List</h1>
+
+</div>
+
+
 
 <div class="container my-2">
-    <h1>Employee List</h1>
+
     <br>
     <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3">Add New Employee</a>
     <br>
@@ -43,7 +51,7 @@
             <td th:text="${employee.lastName}"></td>
             <td th:text="${employee.email}"></td>
             <td th:text="${employee.hireYear}"></td>
-            <!-- TODO Add td for department-->
+            <!-- TODO Add td for department <td th:text="${employee.department}"></td> -->
             <td> <a th:href="@{/showFormForUpdate/{empId}(empId=${employee.empId})}" class="btn btn-primary">Update</a>
                 <a th:href="@{/deleteEmployee/{empId}(empId=${employee.empId})}" class="btn btn-danger">Delete</a>
             </td>
