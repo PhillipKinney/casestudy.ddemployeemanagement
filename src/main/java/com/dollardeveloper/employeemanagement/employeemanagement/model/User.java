@@ -1,27 +1,31 @@
 package com.dollardeveloper.employeemanagement.employeemanagement.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class User {
 
     //A user is an actor that adds employees to the database
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long userId;
 
 
     private String firstName;
     private String lastName;
+    private String email;
     private String password;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable
     private Collection<Role> roles;
 
     public User(){
     }
+
+
 
     public Long getUserId() {
         return userId;
@@ -63,10 +67,11 @@ public class User {
         this.roles = roles;
     }
 
-    public User(String firstName, String lastName, String password, Collection<Role> roles) {
+    public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.email = email;
         this.roles = roles;
 
 
