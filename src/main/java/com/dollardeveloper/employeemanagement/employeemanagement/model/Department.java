@@ -6,6 +6,8 @@ import java.util.List;
 @Entity
 public class Department {
 
+    //A department can have my employees, but an employee can only have one department
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long deptId;

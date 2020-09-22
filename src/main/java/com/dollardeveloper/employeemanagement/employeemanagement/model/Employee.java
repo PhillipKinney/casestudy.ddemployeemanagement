@@ -7,6 +7,8 @@ import java.time.YearMonth;
 @Entity
 public class Employee {
 
+    //Employees that can be added to the database after a user's registration and/or login
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long empId;
