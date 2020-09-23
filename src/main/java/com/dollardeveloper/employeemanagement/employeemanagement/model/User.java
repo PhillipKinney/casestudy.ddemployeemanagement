@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 public class User {
 
-    //A user is an actor that adds employees to the database
+    //A user is an actor that adds employees to the database and writes blog posts
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long userId;
@@ -18,9 +18,14 @@ public class User {
     private String email;
     private String password;
 
+    @OneToMany
+    @JoinColumn
+    private List<Post> posts;
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable
     private Collection<Role> roles;
+
 
     public User(){
     }
