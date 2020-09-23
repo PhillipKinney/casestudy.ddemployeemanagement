@@ -1,4 +1,4 @@
-package com.dollardeveloper.employeemanagement.employeemanagement.dto;
+package com.dollardeveloper.employeemanagement.employeemanagement.web.dto;
 
 public class UserRegistrationDto {
 

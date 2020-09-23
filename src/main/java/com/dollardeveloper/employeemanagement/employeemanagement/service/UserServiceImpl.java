@@ -1,6 +1,6 @@
 package com.dollardeveloper.employeemanagement.employeemanagement.service;
 
-import com.dollardeveloper.employeemanagement.employeemanagement.dto.UserRegistrationDto;
+import com.dollardeveloper.employeemanagement.employeemanagement.web.dto.UserRegistrationDto;
 import com.dollardeveloper.employeemanagement.employeemanagement.model.Role;
 import com.dollardeveloper.employeemanagement.employeemanagement.model.User;
 import com.dollardeveloper.employeemanagement.employeemanagement.repository.UserRepository;
@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -20,22 +21,23 @@ public class UserServiceImpl implements UserService{
 
    private UserRepository userRepository;
 
-    //private BCryptPasswordEncoder passwordEncoder;
+    private BCryptPasswordEncoder passwordEncoder;
 
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository /*, BCryptPasswordEncoder passwordEncoder*/) {
+    public UserServiceImpl(UserRepository userRepository , BCryptPasswordEncoder passwordEncoder) {
         super();
         this.userRepository = userRepository;
-       // this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public User save(UserRegistrationDto registrationDto) {
         User user = new User(registrationDto.getFirstName(),
-                registrationDto.getLastName(), registrationDto.getEmail(),
-                registrationDto.getPassword(), Arrays.asList(new Role("ROLE_USER")));
-
+                registrationDto.getLastName(),
+                registrationDto.getEmail(),
+                passwordEncoder.encode(registrationDto.getPassword()),
+                Arrays.asList(new Role("ROLE_USER")));
         return userRepository.save(user);
     }
 

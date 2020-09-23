@@ -1,8 +1,7 @@
 package com.dollardeveloper.employeemanagement.employeemanagement.web;
 
-import com.dollardeveloper.employeemanagement.employeemanagement.dto.UserRegistrationDto;
+import com.dollardeveloper.employeemanagement.employeemanagement.web.dto.UserRegistrationDto;
 import com.dollardeveloper.employeemanagement.employeemanagement.service.UserService;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
