@@ -18,26 +18,42 @@
     <title>Title</title>
 </head>
 <body>
-<!-- NavBar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Dollar Developer Employee Management</a>
-<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--        <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--        <div class="navbar-nav">-->
-<!--            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
-<!--            <a class="nav-item nav-link" href="#">Features</a>-->
-<!--            <a class="nav-item nav-link" href="#">Pricing</a>-->
-<!--            <a class="nav-item nav-link disabled" href="#">Disabled</a>-->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/img/ddlogo1.png}" height="100" align="center" alt="DD Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <!--                <li class="nav-item active">-->
+                <!--                    <a class="nav-link" href="#">Home-->
+                <!--                        <span class="sr-only">(current)</span>-->
+                <!--                    </a>-->
+                <!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a>-->
+<!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" href="#">Services</a>-->
+                <!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" href="#">Contact</a>-->
+                <!--                </li>-->
+            </ul>
         </div>
     </div>
 </nav>
+<br>
+<br>
 
 <!--RegistrationFrom-->
 
 <div class = "container">
-    <div class = row>
+    <div class = "row justify-content-center align-items-center">
         <div class = "col-md-6 col-md-offset-3">
 
             <!-- success message-->
