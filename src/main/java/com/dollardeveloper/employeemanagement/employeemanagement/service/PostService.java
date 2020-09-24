@@ -8,5 +8,6 @@ public interface PostService {
 
     List<Post> getAllPosts();
     void savePost(Post post);
-
+    Post getPostById(Long id);
+    void deleteEmployeeById(Long id);
 }
