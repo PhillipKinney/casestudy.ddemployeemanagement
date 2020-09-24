@@ -74,10 +74,10 @@
                     <tbody>
                     <tr th:each="post: ${listPosts}">
                         <td th:text="${post.title}"></td>
-                        <td th:text="${post.dateCreated}"></td>
+<!--                    <td th:text="${post.dateCreated}"></td> TODO ADD date created feature-->
                         <td th:text="${post.author}"></td>
                         <td th:text="${post.postBody}"></td>
-<!--                        &lt;!&ndash; TODO Add td for department <td th:text="${employee.department}"></td> &ndash;&gt;-->
+
 <!--                        <td> <a th:href="@{/showFormForUpdate/{empId}(empId=${employee.empId})}" class="btn btn-primary">Update</a>-->
 <!--                            <a th:href="@{/deleteEmployee/{empId}(empId=${employee.empId})}" class="btn btn-danger">Delete</a>-->
 <!--                        </td>-->

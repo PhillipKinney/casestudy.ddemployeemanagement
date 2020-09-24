@@ -18,9 +18,12 @@ public class Post {
 
         private Instant dateCreated;
         private Instant dateUpdated;
+        private String author;
 
-        @ManyToOne (cascade = CascadeType.ALL)
-        private User author;
+//        @ManyToOne (cascade = CascadeType.ALL)
+//        private User author;
+
+
 
         public Long getId() {
                 return id;
@@ -62,11 +65,11 @@ public class Post {
                 this.dateUpdated = dateUpdated;
         }
 
-        public User getAuthor() {
+        public String getAuthor() {
                 return author;
         }
 
-        public void setAuthor(User author) {
+        public void setAuthor(String author) {
                 this.author = author;
         }
 }

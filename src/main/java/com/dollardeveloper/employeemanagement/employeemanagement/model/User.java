@@ -18,9 +18,6 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany
-    @JoinColumn
-    private List<Post> posts;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable
