@@ -30,8 +30,8 @@ public class PostController {
 
     @GetMapping ("/showNewPostForm")
     public String showNewPostForm(Model model){
-        Employee employee = new Employee();
-        model.addAttribute("employee", employee);
+        Post post = new Post();
+        model.addAttribute("post", post);
         return "new_post";
     }
 

@@ -57,10 +57,10 @@
     <h2>Create New Blog Post</h2>
 
     <form action="#" th:action="@{/savePost}" th:object="${post}" method="POST">
-        <input type="text" th:field="*{title}" placeholder="First Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{dateCreated}" placeholder="Last Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{author}" placeholder="Email" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{postBody}" placeholder="Hire Year" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{title}" placeholder="Post Title" class="form-control mb-4 col-4">
+<!--        <input type="text" th:field="*{dateCreated}" placeholder="Date Created" class="form-control mb-4 col-4">-->
+        <input type="text" th:field="*{author}" placeholder="Post Author" class="form-control mb-4 col-4">
+        <textarea type="text" th:field="*{postBody}" placeholder="Content" rows="10" class="form-control mb-4 col-4"></textarea>
 
         <button type="submit" class="btn btn-info col-2">Create New Post</button>
 
@@ -68,8 +68,9 @@
 
 
 </div>
-
-
+<br>
+<br>
+<br>
 
 </body>
 </html>
