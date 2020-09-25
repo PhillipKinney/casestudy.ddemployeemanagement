@@ -22,19 +22,20 @@ public class PostController {
         this.postService= postService;
     }
 
-    //display list of all posts
+    //display list of all posts that can be updated or deleted
     @GetMapping("/postManager")
     public String viewPostPage(Model model){
         model.addAttribute("listPosts", postService.getAllPosts());
         return "index2";
     }
-
+    //shows all posts including the post content
     @GetMapping("/posts")
     public String viewPostHomePage(Model model){
         model.addAttribute("listPosts", postService.getAllPosts());
         return "posts_home";
     }
 
+    //form to create new blog post
     @GetMapping ("/showNewPostForm")
     public String showNewPostForm(Model model){
         Post post = new Post();
@@ -67,8 +68,8 @@ public class PostController {
         return "redirect:/postManager";
     }
 
-//    @GetMapping("/postsHome/")
-//     public String postsHome(){
-//        return"posts_home";
-//    }
+    @GetMapping("/")
+    public String home(){
+        return "home_page";
+    }
 }

@@ -19,7 +19,7 @@ public class EmployeeController {
 
 
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String viewHomePage(Model model){
         model.addAttribute("listEmployees", employeeService.getAllEmployees());
         return "index";
@@ -38,7 +38,7 @@ public class EmployeeController {
     @PostMapping("/saveEmployee")
     public String saveEmployee(@ModelAttribute("employee") Employee employee){
     employeeService.saveEmployee(employee);
-    return "redirect:/";
+    return "redirect:/index";
     }
 
 
@@ -57,7 +57,7 @@ public class EmployeeController {
     @GetMapping("/deleteEmployee/{empId}")
     public String deleteEmployee(@PathVariable(value = "empId") Long empId){
         this.employeeService.deleteEmployeeById(empId);
-        return "redirect:/";
+        return "redirect:/index";
     }
 
 }

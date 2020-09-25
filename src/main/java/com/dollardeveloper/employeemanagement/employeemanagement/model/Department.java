@@ -7,6 +7,7 @@ import java.util.List;
 public class Department {
 
     //A department can have my employees, but an employee can only have one department
+    //TODO integrate Department to employee list in v2
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

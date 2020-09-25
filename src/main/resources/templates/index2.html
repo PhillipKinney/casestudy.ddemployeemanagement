@@ -44,10 +44,9 @@
         <div class="container">
             <div align="center">
                 <h1>Blog Post Manager</h1>
+                <br>
                 <a th:href="@{/showNewPostForm}" class="btn btn-primary">Create New Blog Post</a>
-                <br>
-
-                <br>
+                <a th:href="@{/posts}" class="btn btn-primary">Create New Blog Post</a>
                 <br>
                 <br>
                 <table border="1" class = table table-striped table-responsive-md>
@@ -57,7 +56,7 @@
                         <th>Post Title</th>
 <!--                        <th>Date Created</th> TODO date created feature deferred to v2-->
                         <th>Post Author</th>
-                        <th>Post Body</th>
+<!--                        <th>Post Body</th>  TODO add feature that limits amount of blog post shown. Deferred to v2-->
                         <th>Actions</th>
 
                     </tr>
@@ -68,10 +67,11 @@
                         <td th:text="${post.title}"></td>
 <!--                    <td th:text="${post.dateCreated}"></td> TODO ADD date created feature to v2-->
                         <td th:text="${post.author}"></td>
-                        <td th:text="${post.postBody}"></td>
+<!--                        <td th:text="${post.postBody}"></td> TODO add feature that limits amount of blog post shown. Deferred to v2-->
 
                         <td> <a th:href="@{/showFormForPostUpdate/{id}(id=${post.id})}" class="btn btn-primary">Update Post</a>
-                           <a th:href="@{/deletePost/{id}(id=${post.id})}" class="btn btn-danger">Delete Post</a>  <!--TODO add delete warning message-->
+                           <a th:href="@{/deletePost/{id}(id=${post.id})}" class="btn btn-danger">Delete Post</a>
+                            <!--TODO add delete warning message and confirmation delete feature deferred to v2-->
                         </td>
 
                     </tr>

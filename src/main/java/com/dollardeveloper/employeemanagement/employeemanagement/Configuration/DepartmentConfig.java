@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
-//
+//TODO department configuration deferred to v2
 //@Configuration
 //public class DepartmentConfig {
 //    @Autowired
