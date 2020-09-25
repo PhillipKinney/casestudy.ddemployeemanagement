@@ -23,13 +23,13 @@ public class PostController {
     }
 
     //display list of all posts
-    @GetMapping("/posts")
+    @GetMapping("/postManager")
     public String viewPostPage(Model model){
         model.addAttribute("listPosts", postService.getAllPosts());
         return "index2";
     }
 
-    @GetMapping("/postsHome")
+    @GetMapping("/posts")
     public String viewPostHomePage(Model model){
         model.addAttribute("listPosts", postService.getAllPosts());
         return "posts_home";
@@ -46,7 +46,7 @@ public class PostController {
     @PostMapping("/savePost")
     public String savePost (@ModelAttribute("post") Post  post){
         postService.savePost(post);
-        return "redirect:/posts";
+        return "redirect:/postManager";
     }
 
     //update blog post
@@ -61,10 +61,10 @@ public class PostController {
     }
 
     //delete blog post
-    @GetMapping("/deleteEmployee/{id}")
-    public String deleteEmployee(@PathVariable(value = "id") Long id){
+    @GetMapping("/deletePost/{id}")
+    public String deletePost(@PathVariable(value = "id") Long id){
         this.postService.deleteEmployeeById(id);
-        return "redirect:/posts";
+        return "redirect:/postManager";
     }
 
 //    @GetMapping("/postsHome/")

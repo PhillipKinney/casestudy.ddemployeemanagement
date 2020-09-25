@@ -20,30 +20,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
         <!--        <a class="navbar-brand" href="#">-->
-        <img th:src="@{/img/ddlogo1.png}" height="100" align="center" alt="DD Logo">
+        <img th:src="@{/img/ddlogo1.png}" height="100" align ="center" alt="DD Logo">
         <!--        </a>-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <!--                <li class="nav-item active">-->
-                <!--                    <a class="nav-link" href="#">Home-->
-                <!--                        <span class="sr-only">(current)</span>-->
-                <!--                    </a>-->
-                <!--                </li>-->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="/"th:href="@{/registration}">New User? Register Here</a></span>
+                    <a class="nav-link" href="/" th:href="@{/registration}">New User? Register Here</a></span>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="/"th:href="@{/login}">Previous user? Login Here</a>
+                <li class="nav-item"><a class="nav-link" href="/" th:href="@{/login}">Previous user? Login Here</a>
                 </li>
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#">Services</a>-->
-                <!--                </li>-->
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#">Contact</a>-->
-                <!--                </li>-->
+                           </li>-->
             </ul>
         </div>
     </div>
@@ -52,14 +43,20 @@
 <br>
 <div align="center">
     <h1>Blog Posts</h1>
+    <br>
+    <br>
+    <br>
 </div>
 <div class="container">
     <div th:each="post: ${listPosts}">
-        <h3>Post Title</h3>
-        <div th:text="${post.title}"></div>
+        <br>
+        <h6><u><i>Post Title:</i></u></h6>
+
+       <h3><div th:text="${post.title}"></div></h3>
+
         <!--                    <td th:text="${post.dateCreated}"></td> TODO ADD date created feature to v2-->
-        <h5>Post Written By:</h5>
-        <div th:text="${post.author}"></div>
+        <h6><u><i>Post Written By:</i></u></h6>
+        <h3><div th:text="${post.author}"></div></h3>
         <br>
 
         <div th:text="${post.postBody}"></div>
