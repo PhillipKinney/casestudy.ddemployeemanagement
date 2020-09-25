@@ -19,31 +19,22 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <!--        <a class="navbar-brand" href="#">-->
+
         <img th:src="@{/img/ddlogo1.png}" height="100" align="center" alt="DD Logo">
-        <!--        </a>-->
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <!--                <li class="nav-item active">-->
-                <!--                    <a class="nav-link" href="#">Home-->
-                <!--                        <span class="sr-only">(current)</span>-->
-                <!--                    </a>-->
-                <!--                </li>-->
+
                 <li class="nav-item">
                     <a class="nav-link" href="/"th:href="@{/registration}">New User? Register Here</a></span>
                 </li>
 
                 <li class="nav-item"><a class="nav-link" href="/"th:href="@{/login}">Previous user? Login Here</a>
                 </li>
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#">Services</a>-->
-                <!--                </li>-->
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#">Contact</a>-->
-                <!--                </li>-->
+
             </ul>
         </div>
     </div>
@@ -69,9 +60,7 @@
         <div class="form-group">
             <input type="text" th:field="*{postBody}"  class="form-control mb-4 col-4">
         </div>
-    <!--    <div class="form-group">-->
-    <!--        <input type="text" th:field="*{hireYear}" class="form-control mb-4 col-4">-->
-    <!--    </div>-->
+
         <button type="submit" class="btn btn-info col-2">Update Post</button>
 
     </form>

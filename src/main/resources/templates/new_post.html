@@ -19,31 +19,22 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <!--        <a class="navbar-brand" href="#">-->
+
         <img th:src="@{/img/ddlogo1.png}" height="100" align="center" alt="DD Logo">
-        <!--        </a>-->
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <!--                <li class="nav-item active">-->
-                <!--                    <a class="nav-link" href="#">Home-->
-                <!--                        <span class="sr-only">(current)</span>-->
-                <!--                    </a>-->
-                <!--                </li>-->
+
                 <li class="nav-item">
                     <a class="nav-link" href="/"th:href="@{/registration}">New User? Register Here</a></span>
                 </li>
 
                 <li class="nav-item"><a class="nav-link" href="/"th:href="@{/login}">Previous user? Login Here</a>
                 </li>
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#">Services</a>-->
-                <!--                </li>-->
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="#">Contact</a>-->
-                <!--                </li>-->
+
             </ul>
         </div>
     </div>
@@ -58,7 +49,7 @@
 
     <form action="#" th:action="@{/savePost}" th:object="${post}" method="POST">
         <input type="text" th:field="*{title}" placeholder="Post Title" class="form-control mb-4 col-4">
-        <!--TODO Add date created feature-->
+        <!--TODO Add date created feature deferred to v2-->
 <!--        <input type="text" th:field="*{dateCreated}" placeholder="Date Created" class="form-control mb-4 col-4">-->
         <input type="text" th:field="*{author}" placeholder="Post Author" class="form-control mb-4 col-4">
         <textarea type="text" th:field="*{postBody}" placeholder="Content" rows="10" class="form-control mb-4 col-4"></textarea>
