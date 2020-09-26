@@ -21,8 +21,8 @@ public class ProjectConfig {
     @Autowired
     private PostRepository postRepository;
 
-//    @PostConstruct
-//    public void setup(){
+    @PostConstruct
+    public void setup(){
 //        employeeRepository.saveAll(Arrays.asList(
 //                new Employee(),
 //                new Employee(),
