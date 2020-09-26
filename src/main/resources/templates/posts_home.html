@@ -32,7 +32,7 @@
                     <a th:href="@{/login}" class=" btn btn-primary btn-sm mb-3">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a th:href="@{/registration}" class=" btn btn-primary btn-sm mb-3">Register</a>
+                    <a th:href="@{/registration}" class=" btn btn-success btn-sm mb-3">Register</a>
                 </li>
                 <!--TODO create space to render between buttons. Deferred to v2-->
             </ul>
@@ -45,7 +45,7 @@
 <div align="center">
     <h1>Blog Posts</h1>
     <br>
-        <a th:href="@{/}" class=" btn btn-success btn-sm mb-3">Return To Home Page (if logged in)</a>
+        <a th:href="@{/}" class=" btn btn-success btn-sm mb-3">Return To Home Page</a>
     <br>
 </div>
 <div class="container">
@@ -61,6 +61,7 @@
         <br>
 
         <div th:text="${post.postBody}"></div>
+        <!-- TODO make new posts show first instead of older posts showing first-->
         <hr>
     </div>
 </div>
