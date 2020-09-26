@@ -21,14 +21,15 @@ public class UserServiceImpl implements UserService{
 
    private UserRepository userRepository;
 
+   @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository , BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository) {
         super();
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
+
     }
 
     @Override
