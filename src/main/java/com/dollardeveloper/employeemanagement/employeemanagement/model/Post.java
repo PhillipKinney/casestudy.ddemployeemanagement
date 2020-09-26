@@ -23,7 +23,11 @@ public class Post {
 //        @ManyToOne (cascade = CascadeType.ALL)
 //        private User author;
 
-
+        public Post(String title, String author, String postBody){
+                this.title=title;
+                this.author=author;
+                this.postBody=postBody;
+        }
 
         public Long getId() {
                 return id;
