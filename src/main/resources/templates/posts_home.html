@@ -29,12 +29,15 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a th:href="@{/}" class=" btn btn-success btn-sm mb-3">Return To Home Page</a>
+                    <a th:href="@{/}" class=" btn btn-success btn-sm mb-3">Return To Home Page (if logged in)</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/login}" class=" btn btn-primary btn-sm mb-3">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/registration}" class=" btn btn-primary btn-sm mb-3">Register</a>
                 </li>
                 <!--TODO create space to render between buttons. Deferred to v2-->
-                <li class="nav-item">
-                    <a class=" btn btn-danger btn-sm mb-3" sec:authorize="isAuthenticated()" th:href="@{/logout}">Logout</a>
-                </li>
             </ul>
         </div>
     </div>
