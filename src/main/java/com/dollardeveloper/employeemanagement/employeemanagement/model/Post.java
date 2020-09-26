@@ -29,6 +29,10 @@ public class Post {
                 this.postBody=postBody;
         }
 
+        public Post(){
+
+        }
+
         public Long getId() {
                 return id;
         }
